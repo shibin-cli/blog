@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Blog
-subtitle: ''
-description: ''
+title: web学习笔记
+subtitle: 'web学习笔记'
+description: '学习笔记'
 keywords:
 author: Shibin You
 language: zh-cn
 timezone: ''
 
-# URL
+# URL 
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: https://shibin-cli.github.io/blog
 root: /blog
 permalink: :year/:month/:day/:title/
 permalink_defaults:
