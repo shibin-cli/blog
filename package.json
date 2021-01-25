@@ -1,18 +1,50 @@
 {
   "name": "hexo-site",
   "version": "0.0.0",
+  "description": "test",
+  "homepage": "",
+  "author": {
+    "name": "shibin",
+    "email": "shibin.you@qq.com",
+    "url": ""
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    ""
+  ],
+  "devDependencies": {
+    "git-cz": "^4.7.6",
+    "coveralls": "^3.0.7",
+    "eslint": "^6.6.0",
+    "prettier": "^1.19.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.3",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-config-xo": "^0.27.2",
+    "jest": "^26.1.0"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
   "private": true,
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "pretest": "eslint .",
+    "test": "jest"
   },
   "hexo": {
     "version": "5.3.0"
   },
   "dependencies": {
+    "generator-webapp": "^4.0.0-8",
     "hexo": "^5.0.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-baidu-sitemap": "^0.1.9",
@@ -29,7 +61,40 @@
     "hexo-theme-landscape": "^0.0.3",
     "hexo-wordcount": "^6.0.1"
   },
-  "devDependencies": {
-    "git-cz": "^4.7.6"
-  }
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "repository": "git@github.com:shibin-cli/blog.git",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "license": "Apache-2.0"
 }
