@@ -9,12 +9,12 @@
   <meta name="description" content="部分内容参考了《ECMAScript 6 入门》 ES2015块级作用域在es6之前，只有两种作用域  全局作用域 函数作用域  es6新增了块级作用域，可以使用let和const声明 letlet 可以用来声明变量，它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234if (true) &amp;#123;    var a &#x3D; 100&amp;#125;console.log(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6基础">
-<meta property="og:url" content="https://shibin-cli.github.io/blog/2021/01/21/es6+/index.html">
+<meta property="og:url" content="https://shibin-cli.github.io/blog/2021/01/25/es6+/index.html">
 <meta property="og:site_name" content="web学习笔记">
 <meta property="og:description" content="部分内容参考了《ECMAScript 6 入门》 ES2015块级作用域在es6之前，只有两种作用域  全局作用域 函数作用域  es6新增了块级作用域，可以使用let和const声明 letlet 可以用来声明变量，它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234if (true) &amp;#123;    var a &#x3D; 100&amp;#125;console.log(">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-21T09:45:38.381Z">
-<meta property="article:modified_time" content="2021-01-21T09:45:38.381Z">
+<meta property="article:published_time" content="2021-01-25T10:03:11.584Z">
+<meta property="article:modified_time" content="2021-01-25T10:03:11.584Z">
 <meta property="article:author" content="Shibin You">
 <meta name="twitter:card" content="summary">
   
@@ -79,8 +79,8 @@
       <div class="outer">
         <section id="main"><article id="post-es6+" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/blog/2021/01/21/es6+/" class="article-date">
-  <time class="dt-published" datetime="2021-01-21T09:45:38.381Z" itemprop="datePublished">2021-01-21</time>
+    <a href="/blog/2021/01/25/es6+/" class="article-date">
+  <time class="dt-published" datetime="2021-01-25T10:03:11.584Z" itemprop="datePublished">2021-01-25</time>
 </a>
     
   </div>
@@ -298,12 +298,12 @@ Proxy是以非侵入的方式监管了对象的读写</li>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> f1 = &#123;</span><br><span class="line">    name: <span class="string">&#x27;Shibin&#x27;</span>,</span><br><span class="line">    age: <span class="number">10</span>,</span><br><span class="line">    <span class="keyword">get</span> <span class="title">say</span>() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.name + <span class="string">&#x27;:&#x27;</span> + <span class="built_in">this</span>.age</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> f2 = <span class="built_in">Object</span>.assign(&#123;&#125;, f1)</span><br><span class="line">f2.age = <span class="number">17</span></span><br><span class="line"><span class="built_in">console</span>.log(f2.say) <span class="comment">//&#123; name: &#x27;Shibin&#x27;, age: 17, say: &#x27;Shibin:10&#x27; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> descriptors = <span class="built_in">Object</span>.getOwnPropertyDescriptors(f1)</span><br><span class="line"><span class="keyword">const</span> f3 = <span class="built_in">Object</span>.defineProperties(&#123;&#125;, descriptors)</span><br><span class="line">f3.age = <span class="number">18</span></span><br><span class="line"><span class="built_in">console</span>.log(f3.say) <span class="comment">//Shibin:18</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="String-prototype-padEnd-String-prototype-padStart"><a href="#String-prototype-padEnd-String-prototype-padStart" class="headerlink" title="String.prototype.padEnd  String.prototype.padStart"></a>String.prototype.padEnd  String.prototype.padStart</h3><p>字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str=<span class="string">&#x27;123&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(str.padEnd(<span class="number">8</span>,<span class="number">0</span>)) <span class="comment">// 12300000</span></span><br><span class="line"><span class="built_in">console</span>.log(str.padStart(<span class="number">8</span>,<span class="number">0</span>)) <span class="comment">// 00000123</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str=<span class="string">&#x27;123&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(str.padEnd(<span class="number">8</span>, <span class="string">&#x27;0&#x27;</span>)) <span class="comment">// 12300000</span></span><br><span class="line"><span class="built_in">console</span>.log(str.padStart(<span class="number">8</span>, <span class="string">&#x27;0&#x27;</span>)) <span class="comment">// 00000123</span></span><br></pre></td></tr></table></figure>
 <h3 id="伪逗号"><a href="#伪逗号" class="headerlink" title="伪逗号"></a>伪逗号</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数参数末尾添加伪逗号</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">a, b,</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shibin-cli.github.io/blog/2021/01/21/es6+/" data-id="ckk6o6qqd000053lk5fu3dhlc" data-title="es6基础" class="article-share-link">Teilen</a>
+      <a data-url="https://shibin-cli.github.io/blog/2021/01/25/es6+/" data-id="ckkcel25c000264oohd56950m" data-title="es6基础" class="article-share-link">Teilen</a>
       
       
       
@@ -311,6 +311,20 @@ Proxy是以非侵入的方式监管了对象的读写</li>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/blog/2021/01/25/performance/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          JavaScript性能优化
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -344,7 +358,15 @@ Proxy是以非侵入的方式监管了对象的读写</li>
       <ul>
         
           <li>
-            <a href="/blog/2021/01/21/es6+/">es6基础</a>
+            <a href="/blog/2021/01/25/cli/">脚手架</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2021/01/25/performance/">JavaScript性能优化</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2021/01/25/es6+/">es6基础</a>
           </li>
         
       </ul>

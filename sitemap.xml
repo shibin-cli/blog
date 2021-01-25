@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://shibin-cli.github.io/blog/2021/01/21/es6+/</loc>
+    <loc>https://shibin-cli.github.io/blog/2021/01/25/cli/</loc>
     
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://shibin-cli.github.io/blog/2021/01/25/performance/</loc>
+    
+    <lastmod>2021-01-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://shibin-cli.github.io/blog/2021/01/25/es6+/</loc>
+    
+    <lastmod>2021-01-25</lastmod>
     
   </url>
   
 
   <url>
     <loc>https://shibin-cli.github.io/blog</loc>
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
