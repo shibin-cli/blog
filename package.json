@@ -1,12 +1,12 @@
 {
   "name": "hexo-site",
   "version": "0.0.0",
-  "description": "test",
+  "description": "前端学习笔记",
   "homepage": "",
   "author": {
     "name": "shibin",
     "email": "shibin.you@qq.com",
-    "url": ""
+    "url": "https://github.com/shibin-cli"
   },
   "files": [
     "lib"
