@@ -4,15 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>web学习笔记</title>
+  <title>Lerna | web学习笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="学习笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="web学习笔记">
-<meta property="og:url" content="https://shibin-cli.github.io/blog/index.html">
+  <meta name="description" content="Lerna 是一个优化基于git+npm的多package项目管理工具 优势  大幅度减少重复操作 提升操作单标椎化  原生脚手架的痛点 重复操作，多个package 本地link 依赖安装 单元测试 代码提交 代码发布   版本一致性 版本一致性 发布后相互依赖版本升级    package越多，管理复杂度就越高 Lerna的使用12345678910111213141516171819npm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lerna">
+<meta property="og:url" content="https://shibin-cli.github.io/blog/2021/06/29/lerna/index.html">
 <meta property="og:site_name" content="web学习笔记">
-<meta property="og:description" content="学习笔记">
+<meta property="og:description" content="Lerna 是一个优化基于git+npm的多package项目管理工具 优势  大幅度减少重复操作 提升操作单标椎化  原生脚手架的痛点 重复操作，多个package 本地link 依赖安装 单元测试 代码提交 代码发布   版本一致性 版本一致性 发布后相互依赖版本升级    package越多，管理复杂度就越高 Lerna的使用12345678910111213141516171819npm">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-29T14:36:34.151Z">
+<meta property="article:modified_time" content="2021-06-29T14:36:34.151Z">
 <meta property="article:author" content="Shibin You">
 <meta name="twitter:card" content="summary">
   
@@ -75,64 +77,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-jsdoc" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/2021/06/29/jsdoc/" class="article-date">
-  <time class="dt-published" datetime="2021-06-29T14:36:34.151Z" itemprop="datePublished">2021-06-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/2021/06/29/jsdoc/">jsdoc</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>类型注释  <a target="_blank" rel="noopener" href="https://jsdoc.app/">https://jsdoc.app/</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param  <span class="type">&#123;number&#125;</span> </span>a param1</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param  <span class="type">&#123;number&#125;</span> </span>b param2</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns <span class="type">&#123;number&#125;</span> </span></span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = fn()</span><br></pre></td></tr></table></figure>
-<p>常见的类型注释</p>
-<ul>
-<li><code>@type</code>  变量类型</li>
-<li><code>@param</code>(或<code>@params</code>或<code>@argument</code>) 参数类型</li>
-<li><code>returns</code>(或<code>returns</code>) 返回值类型</li>
-<li><code>typedef</code> 相当于ts中的<code>type Status = &quot;open&quot; | &quot;close&quot;</code></li>
-<li><code>@callback</code> 回调函数  <a target="_blank" rel="noopener" href="https://jsdoc.app/tags-callback.html">https://jsdoc.app/tags-callback.html</a></li>
-<li><code>@template</code></li>
-<li><code>@class</code>（<code>@constructor</code>）</li>
-<li><code>@this</code>  函数内部this指向</li>
-<li><code>@extends</code>(<code>@arguments</code>)</li>
-<li><code>enum</code></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**<span class="doctag">@typedef <span class="type">&#123;&#x27;open&#x27;|&#x27;close&#x27;&#125;</span> </span>Status */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**<span class="doctag">@type <span class="type">&#123;Status&#125;</span> </span>*/</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="string">&#x27;close&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>在webpack中使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** <span class="doctag">@type <span class="type">&#123;import(&#x27;webpack&#x27;).Configuration&#125;</span> </span>*/</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://shibin-cli.github.io/blog/2021/06/29/jsdoc/" data-id="ckqi5logx0000jsojb810eii8" data-title="jsdoc" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-lerna" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-lerna" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/blog/2021/06/29/lerna/" class="article-date">
   <time class="dt-published" datetime="2021-06-29T14:36:34.151Z" itemprop="datePublished">2021-06-29</time>
@@ -145,8 +90,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/2021/06/29/lerna/">Lerna</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Lerna
     </h1>
   
 
@@ -223,17 +168,29 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2021/06/29/jsdoc/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          jsdoc
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2021/06/29/performance/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">JavaScript性能优化</div>
+    </a>
+  
+</nav>
 
   
+</article>
 
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/2/">weiter &raquo;</a>
-  </nav>
 
 </section>
         
