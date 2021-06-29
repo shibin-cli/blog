@@ -109,10 +109,13 @@ module.exports = class extends Generator {
 * 在项目根目录下创建一个plopfile.js文件,定义脚手架任务
 * 编写用于生成特定类型文件的模板
 * 通过Plop提供的CLI运行脚手架服务
+
 ```bash
 npm install plop --save-dev
 ```
+
 plopfile.js
+
 ```js
 module.exports = plop=>{
     plop.setGenerator('component',{
@@ -133,12 +136,15 @@ module.exports = plop=>{
 ```
 ## 脚手架的工作原理
 创建项目,在package.json文件中指定bin(指定cli的入口文件)
+
 ```js
 {
     "bin" :"cli.js"
 }
 ```
+
 cli.js
+
 ```js
 #! /usr/bin/env node
 // cli文件开头必须这样写
@@ -170,4 +176,50 @@ inquirer.prompt([{
         });
     })
 })
+```
+
+然后执行，就可以进行本地调试
+
+``` bash
+npm link
+```
+取消本地链接
+```bash
+# 将当前项目从全局node_modules中删除
+npm unlink
+# link存在取消当前项目链接
+npm unlink your-lib
+# link不存在
+rm -rf node_modules
+npm install -S your-lib
+```
+
+
+问题
+* 为什么全局安装`npm install -g @vue/cli`后会添加命令为vue？
+* 全局安装@vue/cli发生了什么？
+* 执行vue命令发生了什么？为什么vue指向一个js文件，为什么我们可以直接通过vue命令去执行它？
+
+`npm install -g @vue/cli`后，vue的安装目录下package.json下bin决定了vue的命令
+```js
+{
+  "bin": {
+    "vue": "bin/vue.js"
+  }
+}
+```
+在执行vue命令时就会执行上面`bin/vue.js`文件
+
+js文件无法直接执行，但是在js代码开头加上`#! /usr/bin/env node`就可以直接执行js代码了。其中`/usr/bin/env` 指的就是环境变量，`/usr/bin/env node`就是在环境变量中查找node。其实就相当于执行了`node xx.js`命令
+
+
+```js
+#! /usr/bin/env node
+xxx
+```
+`/usr/bin/env`也可以替换为node的安装路径，但是这样做可能会导致在别人的电脑上无法运行，因为每个人node的安装路径可能会不一样
+
+### 脚手架参数
+```js
+console.log(process.argv)
 ```

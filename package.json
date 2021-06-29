@@ -4,9 +4,9 @@
   "description": "test",
   "homepage": "",
   "author": {
-    "name": "shibin",
+    "name": "Shibin",
     "email": "shibin.you@qq.com",
-    "url": ""
+    "url": "https://github.com/shibin-cli/blog"
   },
   "files": [
     "lib"
