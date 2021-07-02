@@ -1,5 +1,10 @@
 ---
 title: JS模块化开发
+categories: 
+- 前端
+tags: 
+- 模块化开发 
+- JavaScript
 ---
 ## 模块化开发的演变过程
 ### 按文件划分
@@ -15,7 +20,7 @@ title: JS模块化开发
 * 实现了内部私有的成员
 * 通过传参传入依赖项
 
-```js
+``` js
 (function($){
     ...
     window.xxx = {
@@ -25,7 +30,7 @@ title: JS模块化开发
 ```
 ### [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD-(%E4%B8%AD%E6%96%87%E7%89%88)
 异步模块定义规范，通过异步方式加载模块，模块加载不影响后面代码执行，所有依赖模块执行的代码，放在回调函数中，异步模块加载完毕后会执行回调函数
-```js
+``` js
 require([module]callback)
 ```
 目前主要有两个JavaScript库实现了AMD规范 [requireJs](https://requirejs.org/) 和[cur](https://github.com/cujojs/curl)
@@ -44,7 +49,7 @@ http://javascript.ruanyifeng.com/nodejs/module.html
 由于CommonJS是同步的，所以不适合浏览器环境，在node环境中，模块都是本地文件，加载速度比较快
 ### CMD(sea.js )
 类似CommonJS规范，后来被requirejs兼容了
-```js
+``` js
 define(function(require, exports, module) {
     // 模块代码
 });
@@ -60,3 +65,5 @@ define(function(require, exports, module) {
 ## 模块标椎规范
 * NodeJS 采用CommonJS规范
 * 浏览器采用ES Modules
+
+## ES Mudules

@@ -1,5 +1,8 @@
 ---
 title: Lerna
+tag: 工具
+categories: 
+- 脚手架
 ---
 [Lerna](https://github.com/lerna/lerna) 是一个优化基于git+npm的多package项目管理工具
 

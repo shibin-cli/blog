@@ -1,5 +1,8 @@
 ---
 title: es6基础
+tag: JavaScript
+categories: 
+- 前端
 ---
 部分内容参考了[《ECMAScript 6 入门》](https://es6.ruanyifeng.com/)
 ## ES2015

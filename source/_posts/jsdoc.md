@@ -1,5 +1,8 @@
 ---
 title: jsdoc
+tag: 工具
+categories: 
+- 开发工具
 ---
 类型注释  https://jsdoc.app/
 ```js

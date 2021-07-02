@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: web学习笔记
-subtitle: 'web学习笔记'
+title: Web前端学习笔记
+subtitle: 'Web前端学习笔记'
 description: '学习笔记'
 keywords:
-author: Shibin You
-language: zh-cn
+author: Shibin
+language: zh-CN
 timezone: ''
 
 # URL 
@@ -45,14 +45,14 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
 prismjs:
-  enable: false
+  enable: true
   preprocess: true
   line_number: true
   tab_replace: ''
@@ -63,7 +63,7 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 2
+  per_page: 6
   order_by: -date
 
 # Category & Tag
@@ -94,11 +94,13 @@ pagination_dir: page
 include:
 exclude:
 ignore:
-
+search:
+  path: search.xml
+  field: post
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: matery
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
