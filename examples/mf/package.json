@@ -1,0 +1,20 @@
+{
+  "name": "mf",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "serve1":"webpack serve --config webpack.config1.js",
+    "serve2":"webpack serve --config webpack.config2.js",
+    "build1":"webpack --config webpack.config1.js",
+    "build2":"webpack --config webpack.config2.js"
+  },
+  "keywords": [],
+  "author": "Shibin",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.42.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
