@@ -528,6 +528,13 @@ require.js要求，每个模块是一个单独的js文件。这样的话，如�
         <span class="token keyword">return</span> a <span class="token operator">+</span> b
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>依赖项的模块</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"foo/title"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"my/cart"</span><span class="token punctuation">,</span> <span class="token string">"my/inventory"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">cart<span class="token punctuation">,</span> inventory</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//Define foo/title object in here.</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>导入模块</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">require<span class="token punctuation">,</span> exports<span class="token punctuation">,</span> module</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
