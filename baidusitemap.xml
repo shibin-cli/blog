@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shibin-cli.github.io/blog/blog/2021/07/02/jsdoc/</loc>
-    <lastmod>2021-07-02</lastmod>
+    <loc>https://shibin-cli.github.io/blog/blog/2021/07/07/jsdoc/</loc>
+    <lastmod>2021-07-07</lastmod>
   </url>
   <url>
-    <loc>https://shibin-cli.github.io/blog/blog/2021/07/02/lerna/</loc>
-    <lastmod>2021-07-02</lastmod>
+    <loc>https://shibin-cli.github.io/blog/blog/2021/07/07/lerna/</loc>
+    <lastmod>2021-07-07</lastmod>
   </url>
   <url>
-    <loc>https://shibin-cli.github.io/blog/blog/2021/07/02/module/</loc>
-    <lastmod>2021-07-02</lastmod>
+    <loc>https://shibin-cli.github.io/blog/blog/2021/07/07/module/</loc>
+    <lastmod>2021-07-07</lastmod>
   </url>
   <url>
-    <loc>https://shibin-cli.github.io/blog/blog/2021/07/02/performance/</loc>
-    <lastmod>2021-07-02</lastmod>
+    <loc>https://shibin-cli.github.io/blog/blog/2021/07/07/moduleFederation/</loc>
+    <lastmod>2021-07-07</lastmod>
   </url>
   <url>
-    <loc>https://shibin-cli.github.io/blog/blog/2021/07/02/scaffolding/</loc>
-    <lastmod>2021-07-02</lastmod>
+    <loc>https://shibin-cli.github.io/blog/blog/2021/07/07/performance/</loc>
+    <lastmod>2021-07-07</lastmod>
   </url>
   <url>
-    <loc>https://shibin-cli.github.io/blog/blog/2021/07/02/tools/</loc>
-    <lastmod>2021-07-02</lastmod>
+    <loc>https://shibin-cli.github.io/blog/blog/2021/07/07/scaffolding/</loc>
+    <lastmod>2021-07-07</lastmod>
   </url>
   <url>
-    <loc>https://shibin-cli.github.io/blog/blog/2021/07/02/es6+/</loc>
-    <lastmod>2021-07-02</lastmod>
+    <loc>https://shibin-cli.github.io/blog/blog/2021/07/07/tools/</loc>
+    <lastmod>2021-07-07</lastmod>
+  </url>
+  <url>
+    <loc>https://shibin-cli.github.io/blog/blog/2021/07/07/es6+/</loc>
+    <lastmod>2021-07-07</lastmod>
   </url>
 </urlset> 

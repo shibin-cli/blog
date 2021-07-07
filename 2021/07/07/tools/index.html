@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="jsdoc, Web前端学习笔记">
+    <meta name="keywords" content="前端常用工具, Web前端学习笔记">
     <meta name="description" content="学习笔记">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>jsdoc | Web前端学习笔记</title>
+    <title>前端常用工具 | Web前端学习笔记</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/blog/libs/awesome/css/all.css">
@@ -267,12 +267,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/blog/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/blog/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">jsdoc</h1>
+                    <h1 class="description center-align post-title">前端常用工具</h1>
                 </div>
             </div>
         </div>
@@ -397,15 +397,6 @@
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/blog/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
-                                开发工具
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
@@ -413,7 +404,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-02
+                    2021-07-07
                 </div>
                 
 
@@ -437,41 +428,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>类型注释  <a target="_blank" rel="noopener" href="https://jsdoc.app/">https://jsdoc.app/</a></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
- * @param  &#123;number&#125; a param1
- * @param  &#123;number&#125; b param2
- * @returns &#123;number&#125; 
- * */</span>
-<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> a <span class="token operator">+</span> b
-<span class="token punctuation">&#125;</span>
+                <h2 id="移动端H5页面调试"><a href="#移动端H5页面调试" class="headerlink" title="移动端H5页面调试"></a>移动端H5页面调试</h2><p>移动端H5页面调试工具 <a target="_blank" rel="noopener" href="https://github.com/Tencent/vConsole">vconsole</a></p>
+<h2 id="查看浏览器的兼容性"><a href="#查看浏览器的兼容性" class="headerlink" title="查看浏览器的兼容性"></a>查看浏览器的兼容性</h2><p> JS/CSS/HTML  兼容性问题都可以查看  <a target="_blank" rel="noopener" href="https://canisue.com/">https://canisue.com/</a></p>
 
-<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>常见的类型注释</p>
-<ul>
-<li><code>@type</code>  变量类型</li>
-<li><code>@param</code>(或<code>@params</code>或<code>@argument</code>) 参数类型</li>
-<li><code>returns</code>(或<code>returns</code>) 返回值类型</li>
-<li><code>typedef</code> 相当于ts中的<code>type Status = &quot;open&quot; | &quot;close&quot;</code></li>
-<li><code>@callback</code> 回调函数  <a target="_blank" rel="noopener" href="https://jsdoc.app/tags-callback.html">https://jsdoc.app/tags-callback.html</a></li>
-<li><code>@template</code></li>
-<li><code>@class</code>（<code>@constructor</code>）</li>
-<li><code>@this</code>  函数内部this指向</li>
-<li><code>@extends</code>(<code>@arguments</code>)</li>
-<li><code>enum</code></li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**@typedef &#123;'open'|'close'&#125; Status */</span>
-
-<span class="token comment">/**@type &#123;Status&#125; */</span>
-<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token string">'close'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在webpack中使用</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/** @type &#123;import('webpack').Configuration&#125; */</span>
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    <span class="token operator">...</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -497,7 +456,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shibin-cli.github.io/blog/blog/2021/07/02/jsdoc/">https://shibin-cli.github.io/blog/blog/2021/07/02/jsdoc/</a>
+                    <a href="https://shibin-cli.github.io/blog/blog/2021/07/07/tools/">https://shibin-cli.github.io/blog/blog/2021/07/07/tools/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -551,18 +510,17 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/blog/2021/07/02/jsdoc/">
+                <a href="/blog/2021/07/07/scaffolding/">
                     <div class="card-image">
                         
                         
-                        <img src="/blog/medias/featureimages/15.jpg" class="responsive-img" alt="jsdoc">
+                        <img src="/blog/medias/featureimages/13.jpg" class="responsive-img" alt="脚手架">
                         
-                        <span class="card-title">jsdoc</span>
+                        <span class="card-title">脚手架</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -572,22 +530,21 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/blog/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    开发工具
+                            <a href="/blog/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -606,13 +563,13 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/blog/2021/07/02/lerna/">
+                <a href="/blog/2021/07/07/es6+/">
                     <div class="card-image">
                         
                         
-                        <img src="/blog/medias/featureimages/12.jpg" class="responsive-img" alt="Lerna">
+                        <img src="/blog/medias/featureimages/14.jpg" class="responsive-img" alt="es6基础">
                         
-                        <span class="card-title">Lerna</span>
+                        <span class="card-title">es6基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -623,14 +580,14 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/blog/categories/%E8%84%9A%E6%89%8B%E6%9E%B6/" class="post-category">
-                                    脚手架
+                            <a href="/blog/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -640,8 +597,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/blog/tags/%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">工具</span>
+                    <a href="/blog/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
