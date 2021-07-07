@@ -118,6 +118,15 @@ define(function (require, exports, module) {
     }
 });
 ```
+依赖项的模块
+```js
+define("foo/title",
+    ["my/cart", "my/inventory"],
+    function(cart, inventory) {
+        //Define foo/title object in here.
+    }
+);
+```
 导入模块
 ``` js
 define(function(require, exports, module) {
