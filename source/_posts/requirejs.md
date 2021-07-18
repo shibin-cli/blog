@@ -13,7 +13,7 @@ tags:
 
 [阮一峰的网络日志](https://www.ruanyifeng.com/blog/2012/11/require_js.html)
 
-下面内容是看了阮一峰大神的文章后写的
+下面部分内容是看了阮一峰大神的文章后写的
 ## 引入requirejs
 ``` html
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.js"></script>
