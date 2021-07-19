@@ -54,7 +54,7 @@ export default {
 +    ]
 }
 ```
-使用rollup加载npm模块
+### 使用rollup加载npm模块
 
 rollup默认只支持路径加载，可以通过使用`@rollup/plugin-node-resolve`像webpack一样通过模块名称倒入模块
 ``` diff
@@ -71,7 +71,7 @@ export default {
     ]
 }
 ```
-使rollup支导入commonjs模块
+### 使rollup支导入commonjs模块
 ``` diff
 + import commonjs from '@rollup/plugin-commonjs'
 
@@ -86,4 +86,47 @@ export default {
     ]
 }
 ```
-代码拆分
+### 代码拆分
+Rollup已经支持动态导入
+``` js
+import('./a').then({sum} => {
+    console.log(sum)
+})
+```
+**注意**，这里**umd**和**iife**不支持代码拆分
+``` js
+export default {
+    input: 'src/main.js',
+    output: {
+        format: 'amd',
+        dir: 'dist'
+    }
+}
+```
+
+### 多入口打包
+``` js
+export default {
+    input: ['src/a.js', 'src/b.js'],
+    output: {
+        format: 'amd',
+        dir: 'dist'
+    }
+}
+```
+
+``` js
+export default {
+    input: {
+        main: './a.js',
+        b: './b.js'
+    },
+    output: {
+        format: 'amd',
+        dir: 'dist'
+    }
+}
+```
+## Rollup选用原则
+* 加载非ESM的第三方模块比较复杂
+* 浏览器环境中，代码拆分功能依赖AMD库（代码拆分不支持UMD和IIFE）
