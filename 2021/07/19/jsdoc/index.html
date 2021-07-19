@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: 工具, Web前端学习笔记">
+    <meta name="keywords" content="jsdoc, Web前端学习笔记">
     <meta name="description" content="学习笔记">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签: 工具 | Web前端学习笔记</title>
+    <title>jsdoc | Web前端学习笔记</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/blog/libs/awesome/css/all.css">
@@ -272,7 +272,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">requirejs使用</h1>
+                    <h1 class="description center-align post-title">jsdoc</h1>
                 </div>
             </div>
         </div>
@@ -388,12 +388,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/blog/tags/%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">模块化开发</span>
-                            </a>
-                        
-                            <a href="/blog/tags/JavaScript/">
-                                <span class="chip bg-color">JavaScript</span>
+                            <a href="/blog/tags/%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">工具</span>
                             </a>
                         
                     </div>
@@ -404,8 +400,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/blog/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
+                            <a href="/blog/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
+                                开发工具
                             </a>
                         
                     </div>
@@ -417,7 +413,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-18
+                    2021-07-19
                 </div>
                 
 
@@ -441,110 +437,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>首先<a target="_blank" rel="noopener" href="https://requirejs.org/docs/download.html">下载requirejs</a>或直接引用cdn</p>
-<p><a target="_blank" rel="noopener" href="https://requirejs.org/">官方文档</a> </p>
-<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2012/11/require_js.html">阮一峰的网络日志</a></p>
-<p>下面部分内容是看了阮一峰大神的文章后写的</p>
-<h2 id="引入requirejs"><a href="#引入requirejs" class="headerlink" title="引入requirejs"></a>引入requirejs</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>也可以这样引入，data-main属性的作用是，指定网页程序的主模块。require.js默认的文件后缀名是js，.js后缀可以不写</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.js<span class="token punctuation">"</span></span> <span class="token attr-name">data-main</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>js/main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>主模块的写法</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">require</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'moduleA'</span><span class="token punctuation">,</span> <span class="token string">'moduleB'</span><span class="token punctuation">,</span> <span class="token string">'moduleC'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">moduleA<span class="token punctuation">,</span> moduleB<span class="token punctuation">,</span> moduleC</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <p>类型注释  <a target="_blank" rel="noopener" href="https://jsdoc.app/">https://jsdoc.app/</a></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * @param  &#123;number&#125; a param1
+ * @param  &#123;number&#125; b param2
+ * @returns &#123;number&#125; 
+ * */</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b
+<span class="token punctuation">&#125;</span>
 
-    <span class="token comment">// some code here</span>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>require函数接收两个参数</p>
+<p>常见的类型注释</p>
 <ul>
-<li>第一个参数是所依赖的模块，类型是数组</li>
-<li>第二个参数是回调函数，引入的所有模块加载成功后会执行<ul>
-<li>回调函数所对应的参数依次对应所导入的模块</li>
+<li><code>@type</code>  变量类型</li>
+<li><code>@param</code>(或<code>@params</code>或<code>@argument</code>) 参数类型</li>
+<li><code>returns</code>(或<code>returns</code>) 返回值类型</li>
+<li><code>typedef</code> 相当于ts中的<code>type Status = &quot;open&quot; | &quot;close&quot;</code></li>
+<li><code>@callback</code> 回调函数  <a target="_blank" rel="noopener" href="https://jsdoc.app/tags-callback.html">https://jsdoc.app/tags-callback.html</a></li>
+<li><code>@template</code></li>
+<li><code>@class</code>（<code>@constructor</code>）</li>
+<li><code>@this</code>  函数内部this指向</li>
+<li><code>@extends</code>(<code>@arguments</code>)</li>
+<li><code>enum</code></li>
 </ul>
-</li>
-</ul>
-<h2 id="模块的加载"><a href="#模块的加载" class="headerlink" title="模块的加载"></a>模块的加载</h2><p>require.config</p>
-<ul>
-<li>可以对模块的加载行为进行自定义。</li>
-<li>参数是个对象<ul>
-<li>paths <ul>
-<li>指定各个模块的加载路径</li>
-<li>模块路径也可以是个网址</li>
-</ul>
-</li>
-<li>baseUrl 指定模块的根路径<pre class="line-numbers language-js" data-language="js"><code class="language-js">require<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-    paths<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-        <span class="token string">"jquery"</span><span class="token operator">:</span> <span class="token string">"jquery.min"</span><span class="token punctuation">,</span>
-        <span class="token string">"underscore"</span><span class="token operator">:</span> <span class="token string">"underscore.min"</span><span class="token punctuation">,</span>
-        <span class="token string">"backbone"</span><span class="token operator">:</span> <span class="token string">"backbone.min"</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-指定模块的根路径<pre class="line-numbers language-js" data-language="js"><code class="language-js">require<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-    <span class="token comment">//  指定模块的根路径</span>
-    baseUrl<span class="token operator">:</span> <span class="token string">"js/lib"</span><span class="token punctuation">,</span>
-    paths<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-        <span class="token string">"jquery"</span><span class="token operator">:</span> <span class="token string">"jquery.min"</span><span class="token punctuation">,</span>
-        <span class="token string">"underscore"</span><span class="token operator">:</span> <span class="token string">"underscore.min"</span><span class="token punctuation">,</span>
-        <span class="token string">"backbone"</span><span class="token operator">:</span> <span class="token string">"backbone.min"</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-模块路径也可以是个网址<pre class="line-numbers language-js" data-language="js"><code class="language-js">require<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-    paths<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 模块路径也可以是个网址</span>
-        <span class="token string">"jquery"</span><span class="token operator">:</span> <span class="token string">"https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min"</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-require.js要求，每个模块是一个单独的js文件。这样的话，如果加载多个模块，就会发出多次HTTP请求，会影响网页的加载速度。因此，require.js提供了一个优化工具，当模块部署完毕以后，可以用这个工具将多个模块合并在一个文件中，减少HTTP请求数。</li>
-</ul>
-</li>
-</ul>
-<h2 id="AMD模块的写法"><a href="#AMD模块的写法" class="headerlink" title="AMD模块的写法"></a>AMD模块的写法</h2><p>require.js加载的模块，采用AMD规范。</p>
-<p>模块必须采用特定的define方法来定义</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// math.js</span>
-<span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">var</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**@typedef &#123;'open'|'close'&#125; Status */</span>
 
-    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-        add<span class="token operator">:</span> add
-    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token comment">/**@type &#123;Status&#125; */</span>
+<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token string">'close'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>加载模块</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">require</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'math'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">math</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>当依赖其他模块时，define函数的第一个参数，就是所依赖的模块且必须是一个数组</p>
-<h2 id="CMD模块写法"><a href="#CMD模块写法" class="headerlink" title="CMD模块写法"></a>CMD模块写法</h2><p>requirejs兼容了CMD规范的写法（类CommonJS的写法）</p>
-<p>声明模块，写法1</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">require<span class="token punctuation">,</span> exports<span class="token punctuation">,</span> module</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    exports<span class="token punctuation">.</span><span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> a <span class="token operator">+</span> b
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>写法2</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">require<span class="token punctuation">,</span> exports<span class="token punctuation">,</span> module</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> a <span class="token operator">+</span> b
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>依赖项的模块</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"foo/title"</span><span class="token punctuation">,</span>
-    <span class="token punctuation">[</span><span class="token string">"my/cart"</span><span class="token punctuation">,</span> <span class="token string">"my/inventory"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">cart<span class="token punctuation">,</span> inventory</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">//Define foo/title object in here.</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>导入模块</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">require<span class="token punctuation">,</span> exports<span class="token punctuation">,</span> module</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-            b <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment">//Return the module value</span>
-        <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<p>在webpack中使用</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/** @type &#123;import('webpack').Configuration&#125; */</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -570,7 +497,7 @@ require.js要求，每个模块是一个单独的js文件。这样的话，如�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shibin-cli.github.io/blog/blog/2021/07/18/requirejs/">https://shibin-cli.github.io/blog/blog/2021/07/18/requirejs/</a>
+                    <a href="https://shibin-cli.github.io/blog/blog/2021/07/19/jsdoc/">https://shibin-cli.github.io/blog/blog/2021/07/19/jsdoc/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -624,17 +551,18 @@ require.js要求，每个模块是一个单独的js文件。这样的话，如�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/blog/2021/07/18/performance/">
+                <a href="/blog/2021/07/19/jsdoc/">
                     <div class="card-image">
                         
                         
-                        <img src="/blog/medias/featureimages/17.jpg" class="responsive-img" alt="JavaScript性能优化">
+                        <img src="/blog/medias/featureimages/15.jpg" class="responsive-img" alt="jsdoc">
                         
-                        <span class="card-title">JavaScript性能优化</span>
+                        <span class="card-title">jsdoc</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -644,22 +572,27 @@ require.js要求，每个模块是一个单独的js文件。这样的话，如�
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Shibin
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/blog/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    开发工具
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/blog/tags/%E6%80%A7%E8%83%BD/">
-                        <span class="chip bg-color">性能</span>
+                    <a href="/blog/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>
@@ -673,13 +606,13 @@ require.js要求，每个模块是一个单独的js文件。这样的话，如�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/blog/2021/07/18/scaffolding/">
+                <a href="/blog/2021/07/19/lerna/">
                     <div class="card-image">
                         
                         
-                        <img src="/blog/medias/featureimages/13.jpg" class="responsive-img" alt="脚手架">
+                        <img src="/blog/medias/featureimages/12.jpg" class="responsive-img" alt="Lerna">
                         
-                        <span class="card-title">脚手架</span>
+                        <span class="card-title">Lerna</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -690,14 +623,14 @@ require.js要求，每个模块是一个单独的js文件。这样的话，如�
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/blog/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/blog/categories/%E8%84%9A%E6%89%8B%E6%9E%B6/" class="post-category">
+                                    脚手架
                                 </a>
                             
                             
