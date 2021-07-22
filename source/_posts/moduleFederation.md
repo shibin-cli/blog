@@ -1,5 +1,6 @@
 ---
 title: 如何使用模块联邦落地微前端
+date: 2021-07-09
 categories: 
 - 前端
 tags: 
@@ -14,6 +15,8 @@ tags:
 模块加载模式没有中心容器，可以将任意一个微应用当做项目入口，微应用与微应用之间相互串联，这种模式也叫做**去中心化模式**
 
 webpack5引进了[Module Federation](https://webpack.docschina.org/concepts/module-federation/)（模块联邦，简称mf），mf 实际想要做的事，便是把多个无相互依赖、单独部署的应用合并为一个。一个模块既可以导出给其他模块使用，又可以导入一个其他模块
+
+无论是 [single-spa](https://zh-hans.single-spa.js.org/docs/getting-started-overview) 还是 [qiankun](https://qiankun.umijs.org/zh/guide)，加载不同模块，都需要有一个容器中心来承载，而在 mf 中，没有且也不需要容器中心（每个应用都可以导出又导入）
 
 ## Module Federation在webpack中的使用
 

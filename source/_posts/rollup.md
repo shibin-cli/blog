@@ -105,6 +105,7 @@ export default {
 ```
 
 ### 多入口打包
+Rollup多入口打包的写法与Webpack类似
 ``` js
 export default {
     input: ['src/a.js', 'src/b.js'],

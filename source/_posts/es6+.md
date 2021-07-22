@@ -1,6 +1,7 @@
 ---
 title: es6基础
 tag: JavaScript
+date: 2021-01-01
 categories: 
 - 前端
 ---
