@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="前端常用工具, Web前端学习笔记">
+    <meta name="keywords" content="脚手架, Web前端学习笔记">
     <meta name="description" content="学习笔记">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>前端常用工具 | Web前端学习笔记</title>
+    <title>脚手架 | Web前端学习笔记</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/blog/libs/awesome/css/all.css">
@@ -267,12 +267,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/blog/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/blog/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">前端常用工具</h1>
+                    <h1 class="description center-align post-title">脚手架</h1>
                 </div>
             </div>
         </div>
@@ -397,6 +397,15 @@
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/blog/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -404,7 +413,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-19
+                    2021-01-10
                 </div>
                 
 
@@ -428,8 +437,181 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="移动端H5页面调试"><a href="#移动端H5页面调试" class="headerlink" title="移动端H5页面调试"></a>移动端H5页面调试</h2><p>移动端H5页面调试工具 <a target="_blank" rel="noopener" href="https://github.com/Tencent/vConsole">vconsole</a></p>
-<h2 id="查看浏览器的兼容性"><a href="#查看浏览器的兼容性" class="headerlink" title="查看浏览器的兼容性"></a>查看浏览器的兼容性</h2><p> JS/CSS/HTML  兼容性问题都可以查看  <a target="_blank" rel="noopener" href="https://canisue.com/">https://canisue.com/</a></p>
+                <h2 id="脚手架的本质作用"><a href="#脚手架的本质作用" class="headerlink" title="脚手架的本质作用"></a>脚手架的本质作用</h2><p>创建项目的基础解构、提供项目规范和约定</p>
+<ul>
+<li>相同的组织结构</li>
+<li>相同的开发方式</li>
+<li>相同的模块依赖</li>
+<li>相同的工具配置</li>
+<li>相同的基础代码</li>
+</ul>
+<p>常用的脚手架工具</p>
+<ul>
+<li>根据信息创建对应的项目基础结构（create-app、vue-cli）</li>
+<li>Yeoman</li>
+<li>Plop(例如创建一个组件、模块所需的文件)<h2 id="Yeoman"><a href="#Yeoman" class="headerlink" title="Yeoman"></a>Yeoman</h2>安装<a target="_blank" rel="noopener" href="https://yeoman.io/">yeoman</a><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yo -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+安装generator<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装对应的generator</span>
+<span class="token function">npm</span> <span class="token function">install</span> generator-node -g
+<span class="token comment"># 运行脚手架</span>
+yo node
+<span class="token comment"># 创建cli文件</span>
+yo node:cli<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="自定义generator"><a href="#自定义generator" class="headerlink" title="自定义generator"></a>自定义generator</h3><img src="https://gitee.com/shibin1/fed-e-task-02-01/raw/master/note/img/2.jpg" alt="generator基本结构"></li>
+</ul>
+<p>Yeoman的Generator模块名称必须是<code>generator-&lt;name&gt;</code></p>
+<p>首先创建对应的项目结构</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> yeoman-generator<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>generators/app.js</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> Generator <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'yeoman-generator'</span><span class="token punctuation">)</span>
+<span class="token comment">/**
+ * 此文件为Generator的入口文件
+ * 需要导出一个继承自yeoman-generator的类型
+ * 在工作时会自动调用我们在此声明的一些生命周期方法
+ */</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Generator <span class="token punctuation">&#123;</span>
+    <span class="token comment">//生成文件时会调用此方法</span>
+    <span class="token function">wriging</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>fs<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">destinationPath</span><span class="token punctuation">(</span><span class="token string">'test.txt'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后执行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">link</span>
+yo <span class="token operator">&lt;</span>name<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>创建模板文件夹<code> generators/app/teplates</code>，该文件夹用于存放模板文件，模板为ejs模板</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> Generator <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'yeoman-generator'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Generator <span class="token punctuation">&#123;</span>
+    <span class="token function">wriging</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 对应模板文件夹下的index.html</span>
+        <span class="token keyword">const</span> tpl <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">templatePath</span><span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">)</span>
+        <span class="token keyword">const</span> ctx <span class="token operator">=</span> <span class="token punctuation">&#123;</span> title<span class="token operator">:</span> <span class="token string">'Yeoman'</span><span class="token punctuation">,</span> content<span class="token operator">:</span> <span class="token string">'Yeoman is great!'</span> <span class="token punctuation">&#125;</span>
+        <span class="token keyword">const</span> output <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">destinationPath</span><span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>fs<span class="token punctuation">.</span><span class="token function">copyTpl</span><span class="token punctuation">(</span>tpl<span class="token punctuation">,</span> output<span class="token punctuation">,</span> ctx<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接收用户输入</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">class</span> <span class="token class-name">extends</span> Generator <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 用于接收用户输入</span>
+    <span class="token function">prompting</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">prompt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+            type<span class="token operator">:</span> <span class="token string">'input'</span><span class="token punctuation">,</span>
+            name<span class="token operator">:</span> <span class="token string">'title'</span><span class="token punctuation">,</span>
+            message<span class="token operator">:</span> <span class="token string">'Your title'</span><span class="token punctuation">,</span>
+            <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>appname
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+            type<span class="token operator">:</span> <span class="token string">'input'</span><span class="token punctuation">,</span>
+            name<span class="token operator">:</span> <span class="token string">'content'</span><span class="token punctuation">,</span>
+            message<span class="token operator">:</span> <span class="token string">'Your content'</span><span class="token punctuation">,</span>
+            <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>appname
+        <span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">answers</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>answers<span class="token punctuation">)</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>answers <span class="token operator">=</span> answers
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">//生成文件时会调用此方法</span>
+    <span class="token function">wriging</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 对应模板文件夹下的index.html</span>
+        <span class="token keyword">const</span> tpl <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">templatePath</span><span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">)</span>
+        <span class="token keyword">const</span> ctx <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>answers
+        <span class="token keyword">const</span> output <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">destinationPath</span><span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>fs<span class="token punctuation">.</span><span class="token function">copyTpl</span><span class="token punctuation">(</span>tpl<span class="token punctuation">,</span> output<span class="token punctuation">,</span> ctx<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Plop"><a href="#Plop" class="headerlink" title="Plop"></a>Plop</h2><ul>
+<li>将<a target="_blank" rel="noopener" href="https://github.com/plopjs/plop">plop</a>模块作为项目开发依赖安装</li>
+<li>在项目根目录下创建一个plopfile.js文件,定义脚手架任务</li>
+<li>编写用于生成特定类型文件的模板</li>
+<li>通过Plop提供的CLI运行脚手架服务</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> plop --save-dev<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>plopfile.js</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token parameter">plop</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+    plop<span class="token punctuation">.</span><span class="token function">setGenerator</span><span class="token punctuation">(</span><span class="token string">'component'</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span>
+        description<span class="token operator">:</span> <span class="token string">'create a component'</span><span class="token punctuation">,</span>
+        prompts<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+            type<span class="token operator">:</span><span class="token string">'input'</span><span class="token punctuation">,</span>
+            name<span class="token operator">:</span><span class="token string">'name'</span><span class="token punctuation">,</span>
+            message<span class="token operator">:</span><span class="token string">'Component name'</span><span class="token punctuation">,</span>
+            <span class="token keyword">default</span><span class="token operator">:</span><span class="token string">'MyComponent'</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        actions<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+            type<span class="token operator">:</span><span class="token string">'add'</span><span class="token punctuation">,</span>
+            path<span class="token operator">:</span><span class="token string">'src/components/&#123;&#123;name&#125;&#125;/&#123;&#123;name&#125;&#125;.js'</span><span class="token punctuation">,</span>
+            templateFile<span class="token operator">:</span><span class="token string">'templates/component.hbs'</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="脚手架的工作原理"><a href="#脚手架的工作原理" class="headerlink" title="脚手架的工作原理"></a>脚手架的工作原理</h2><p>创建项目,在package.json文件中指定bin(指定cli的入口文件)</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">&#123;</span>
+    <span class="token string">"bin"</span> <span class="token operator">:</span><span class="token string">"cli.js"</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>cli.js</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token hashbang comment">#! /usr/bin/env node</span>
+<span class="token comment">// cli文件开头必须这样写</span>
+<span class="token comment">// 如果是Linux或macOS系统还需要修改此文件的读写权限为755，具体就是通过 chmod 755 cli.js 实现修改</span>
+
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> inquirer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'inquirer'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> ejs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'ejs'</span><span class="token punctuation">)</span>
+inquirer<span class="token punctuation">.</span><span class="token function">prompt</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+    type<span class="token operator">:</span> <span class="token string">'input'</span><span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">'name'</span><span class="token punctuation">,</span>
+    message<span class="token operator">:</span> <span class="token string">'project name'</span><span class="token punctuation">,</span>
+    required<span class="token operator">:</span><span class="token boolean">true</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">answers</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>answers<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'cancel'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">const</span> tmpDir <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'templates'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> destDir <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    fs<span class="token punctuation">.</span><span class="token function">readdir</span><span class="token punctuation">(</span>tmpDir<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> files</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+        files<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">file</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            ejs<span class="token punctuation">.</span><span class="token function">renderFile</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>tmpDir<span class="token punctuation">,</span> file<span class="token punctuation">)</span><span class="token punctuation">,</span> answers<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+                fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>destDir<span class="token punctuation">,</span> file<span class="token punctuation">)</span><span class="token punctuation">,</span> res<span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然后执行，就可以进行本地调试</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">link</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>取消本地链接</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将当前项目从全局node_modules中删除</span>
+<span class="token function">npm</span> unlink
+<span class="token comment"># link存在取消当前项目链接</span>
+<span class="token function">npm</span> unlink your-lib
+<span class="token comment"># link不存在</span>
+<span class="token function">rm</span> -rf node_modules
+<span class="token function">npm</span> <span class="token function">install</span> -S your-lib<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<p>问题</p>
+<ul>
+<li>为什么全局安装<code>npm install -g @vue/cli</code>后会添加命令为vue？</li>
+<li>全局安装@vue/cli发生了什么？</li>
+<li>执行vue命令发生了什么？为什么vue指向一个js文件，为什么我们可以直接通过vue命令去执行它？</li>
+</ul>
+<p><code>npm install -g @vue/cli</code>后，vue的安装目录下package.json下bin决定了vue的命令</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">&#123;</span>
+  <span class="token string">"bin"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">"vue"</span><span class="token operator">:</span> <span class="token string">"bin/vue.js"</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在执行vue命令时就会执行上面<code>bin/vue.js</code>文件</p>
+<p>js文件无法直接执行，但是在js代码开头加上<code>#! /usr/bin/env node</code>就可以直接执行js代码了。其中<code>/usr/bin/env</code> 指的就是环境变量，<code>/usr/bin/env node</code>就是在环境变量中查找node。其实就相当于执行了<code>node xx.js</code>命令</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token hashbang comment">#! /usr/bin/env node</span>
+xxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><code>/usr/bin/env</code>也可以替换为node的安装路径，但是这样做可能会导致在别人的电脑上无法运行，因为每个人node的安装路径可能会不一样</p>
+<h3 id="脚手架参数"><a href="#脚手架参数" class="headerlink" title="脚手架参数"></a>脚手架参数</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>argv<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -456,7 +638,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shibin-cli.github.io/blog/blog/2021/07/19/tools/">https://shibin-cli.github.io/blog/blog/2021/07/19/tools/</a>
+                    <a href="https://shibin-cli.github.io/blog/blog/2021/01/10/scaffolding/">https://shibin-cli.github.io/blog/blog/2021/01/10/scaffolding/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -514,13 +696,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/blog/2021/07/19/scaffolding/">
+                <a href="/blog/2021/01/10/lerna/">
                     <div class="card-image">
                         
                         
-                        <img src="/blog/medias/featureimages/13.jpg" class="responsive-img" alt="脚手架">
+                        <img src="/blog/medias/featureimages/12.jpg" class="responsive-img" alt="Lerna">
                         
-                        <span class="card-title">脚手架</span>
+                        <span class="card-title">Lerna</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -531,14 +713,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-10
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/blog/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/blog/categories/%E8%84%9A%E6%89%8B%E6%9E%B6/" class="post-category">
+                                    脚手架
                                 </a>
                             
                             
@@ -563,7 +745,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/blog/2021/07/19/es6+/">
+                <a href="/blog/2021/01/01/es6+/">
                     <div class="card-image">
                         
                         
@@ -580,7 +762,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-01
                             </span>
                         <span class="publish-author">
                             

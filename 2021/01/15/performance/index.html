@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: 工具, Web前端学习笔记">
+    <meta name="keywords" content="JavaScript性能优化, Web前端学习笔记">
     <meta name="description" content="学习笔记">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签: 工具 | Web前端学习笔记</title>
+    <title>JavaScript性能优化 | Web前端学习笔记</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/blog/libs/awesome/css/all.css">
@@ -267,12 +267,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/blog/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/blog/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">requirejs使用</h1>
+                    <h1 class="description center-align post-title">JavaScript性能优化</h1>
                 </div>
             </div>
         </div>
@@ -388,27 +388,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/blog/tags/%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/">
-                                <span class="chip bg-color">模块化开发</span>
-                            </a>
-                        
-                            <a href="/blog/tags/JavaScript/">
-                                <span class="chip bg-color">JavaScript</span>
+                            <a href="/blog/tags/%E6%80%A7%E8%83%BD/">
+                                <span class="chip bg-color">性能</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/blog/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -417,7 +404,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-19
+                    2021-01-15
                 </div>
                 
 
@@ -441,109 +428,178 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>首先<a target="_blank" rel="noopener" href="https://requirejs.org/docs/download.html">下载requirejs</a>或直接引用cdn</p>
-<p><a target="_blank" rel="noopener" href="https://requirejs.org/">官方文档</a> </p>
-<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2012/11/require_js.html">阮一峰的网络日志</a></p>
-<p>下面部分内容是看了阮一峰大神的文章后写的</p>
-<h2 id="引入requirejs"><a href="#引入requirejs" class="headerlink" title="引入requirejs"></a>引入requirejs</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>也可以这样引入，data-main属性的作用是，指定网页程序的主模块。require.js默认的文件后缀名是js，.js后缀可以不写</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.js<span class="token punctuation">"</span></span> <span class="token attr-name">data-main</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>js/main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>主模块的写法</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">require</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'moduleA'</span><span class="token punctuation">,</span> <span class="token string">'moduleB'</span><span class="token punctuation">,</span> <span class="token string">'moduleC'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">moduleA<span class="token punctuation">,</span> moduleB<span class="token punctuation">,</span> moduleC</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-
-    <span class="token comment">// some code here</span>
-
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>require函数接收两个参数</p>
+                <h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p>为什么需要使用内存管理</p>
+<h3 id="内存管理介绍"><a href="#内存管理介绍" class="headerlink" title="内存管理介绍"></a>内存管理介绍</h3><p>内存: 有可读写单元组成，表示一片可操作空间</p>
+<p>管理：人为的去操作一片空间的申请、使用和释放</p>
+<p>内存管理：开发者主动申请空间、使用空间、释放空间</p>
+<p>管理流程： 申请 -&gt; 管理 -&gt; 释放</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 申请</span>
+<span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token comment">// 使用</span>
+obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'aa'</span>
+<span class="token comment">// 释放</span>
+obj <span class="token operator">=</span> <span class="token keyword">null</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Javascript中的垃圾回收"><a href="#Javascript中的垃圾回收" class="headerlink" title="Javascript中的垃圾回收"></a>Javascript中的垃圾回收</h3><ul>
+<li>JavaScript中内存管理是自动的</li>
+<li>对象在不被引用时时垃圾、对象不能从根上访问到时时垃圾</li>
+</ul>
+<p>JavaScript中的可达对象</p>
 <ul>
-<li>第一个参数是所依赖的模块，类型是数组</li>
-<li>第二个参数是回调函数，引入的所有模块加载成功后会执行<ul>
-<li>回调函数所对应的参数依次对应所导入的模块</li>
+<li>可以访问到的对象就是可达对象（引用、作用域链）</li>
+<li>可达的标准就是从根出发是否能够被找到</li>
+<li>JavaScript中的根就可以理解为时全局变量对象</li>
 </ul>
-</li>
+<p>JavaScript中的引用与可达</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    name<span class="token operator">:</span> <span class="token string">'JavaScript'</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> obj2 <span class="token operator">=</span> obj
+obj <span class="token operator">=</span> <span class="token keyword">null</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面代码中obj虽然obj赋值为null，但是obj2还在引用obj对象，所以obj依然是可达的</p>
+<h2 id="GC算法"><a href="#GC算法" class="headerlink" title="GC算法"></a>GC算法</h2><ul>
+<li>GC就是垃圾回收机制的简写</li>
+<li>GC可以找到内存中的垃圾、并释放和回收空间</li>
 </ul>
-<h2 id="模块的加载"><a href="#模块的加载" class="headerlink" title="模块的加载"></a>模块的加载</h2><p>require.config</p>
+<p>GC中的垃圾是什么</p>
 <ul>
-<li>可以对模块的加载行为进行自定义。</li>
-<li>参数是个对象<ul>
-<li>paths <ul>
-<li>指定各个模块的加载路径</li>
-<li>模块路径也可以是个网址</li>
+<li>程序中不在需要使用的对象</li>
+<li>程序中不能再访问到的对象</li>
 </ul>
-</li>
-<li>baseUrl 指定模块的根路径<pre class="line-numbers language-js" data-language="js"><code class="language-js">require<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-    paths<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-        <span class="token string">"jquery"</span><span class="token operator">:</span> <span class="token string">"jquery.min"</span><span class="token punctuation">,</span>
-        <span class="token string">"underscore"</span><span class="token operator">:</span> <span class="token string">"underscore.min"</span><span class="token punctuation">,</span>
-        <span class="token string">"backbone"</span><span class="token operator">:</span> <span class="token string">"backbone.min"</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-指定模块的根路径<pre class="line-numbers language-js" data-language="js"><code class="language-js">require<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-    <span class="token comment">//  指定模块的根路径</span>
-    baseUrl<span class="token operator">:</span> <span class="token string">"js/lib"</span><span class="token punctuation">,</span>
-    paths<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-        <span class="token string">"jquery"</span><span class="token operator">:</span> <span class="token string">"jquery.min"</span><span class="token punctuation">,</span>
-        <span class="token string">"underscore"</span><span class="token operator">:</span> <span class="token string">"underscore.min"</span><span class="token punctuation">,</span>
-        <span class="token string">"backbone"</span><span class="token operator">:</span> <span class="token string">"backbone.min"</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-模块路径也可以是个网址<pre class="line-numbers language-js" data-language="js"><code class="language-js">require<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-    paths<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// 模块路径也可以是个网址</span>
-        <span class="token string">"jquery"</span><span class="token operator">:</span> <span class="token string">"https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min"</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-require.js要求，每个模块是一个单独的js文件。这样的话，如果加载多个模块，就会发出多次HTTP请求，会影响网页的加载速度。因此，require.js提供了一个优化工具，当模块部署完毕以后，可以用这个工具将多个模块合并在一个文件中，减少HTTP请求数。</li>
+<p>GC算法是什么</p>
+<ul>
+<li>GC算法是一种机制，垃圾回收器完成具体的工作</li>
+<li>工作的内容就是查找垃圾释放空间、回收空间</li>
+<li>算法是工作时查找和回收所遵循的规则</li>
 </ul>
-</li>
+<p>常见的GC算法</p>
+<ul>
+<li>引用计数</li>
+<li>标记清除</li>
+<li>标记整理</li>
+<li>分代回收</li>
 </ul>
-<h2 id="AMD模块的写法"><a href="#AMD模块的写法" class="headerlink" title="AMD模块的写法"></a>AMD模块的写法</h2><p>require.js加载的模块，采用AMD规范。</p>
-<p>模块必须采用特定的define方法来定义</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// math.js</span>
-<span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">var</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-        add<span class="token operator">:</span> add
-    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>加载模块</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">require</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'math'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">math</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>当依赖其他模块时，define函数的第一个参数，就是所依赖的模块且必须是一个数组</p>
-<h2 id="CMD模块写法"><a href="#CMD模块写法" class="headerlink" title="CMD模块写法"></a>CMD模块写法</h2><p>requirejs兼容了CMD规范的写法（类CommonJS的写法）</p>
-<p>声明模块，写法1</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">require<span class="token punctuation">,</span> exports<span class="token punctuation">,</span> module</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    exports<span class="token punctuation">.</span><span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> a <span class="token operator">+</span> b
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>写法2</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">require<span class="token punctuation">,</span> exports<span class="token punctuation">,</span> module</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> a <span class="token operator">+</span> b
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>依赖项的模块</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"foo/title"</span><span class="token punctuation">,</span>
-    <span class="token punctuation">[</span><span class="token string">"my/cart"</span><span class="token punctuation">,</span> <span class="token string">"my/inventory"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">cart<span class="token punctuation">,</span> inventory</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">//Define foo/title object in here.</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>导入模块</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">define</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">require<span class="token punctuation">,</span> exports<span class="token punctuation">,</span> module</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-            b <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment">//Return the module value</span>
-        <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h3><ul>
+<li>引用计数的核心就是设置引用数，判断当前引用计数是否位0</li>
+<li>引用关系发生改变时修改引用数字</li>
+<li>引用数字为0时，立即回收</li>
+</ul>
+<p>引用计数的优点</p>
+<ul>
+<li>发现垃圾时立即回收</li>
+<li>最大限度的减少程序的暂停</li>
+</ul>
+<p>引用计数的缺点</p>
+<ul>
+<li>无法回收循环引用的对象</li>
+<li>资源开销大</li>
+</ul>
+<p>下面代码就会引起循环引用</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> obj1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    <span class="token keyword">const</span> obj2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    obj1<span class="token punctuation">.</span>name <span class="token operator">=</span> obj2
+    obj2<span class="token punctuation">.</span>name <span class="token operator">=</span> obj1
+<span class="token punctuation">&#125;</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h3><p>分标记和清除两个阶段完成</p>
+<ul>
+<li>遍历所有对象找标记活动对象（查询所有的可达对象进行标记）</li>
+<li>遍历所有对象清除没有标记的对象</li>
+<li>回收相应的空间</li>
+</ul>
+<p>标记清除的优点</p>
+<ul>
+<li>可以解决前面提到的对象引用的问题</li>
+</ul>
+<p>标记清除的缺点</p>
+<ul>
+<li>空间的碎片化</li>
+<li>不能立即回收对象<h3 id="标记整理"><a href="#标记整理" class="headerlink" title="标记整理"></a>标记整理</h3></li>
+<li>标记整理可以看做时标记清除的增强</li>
+<li>标记阶段的操作和标记清除一致</li>
+<li>清除阶段会先执行整理，移动对象位置</li>
+</ul>
+<p>优点</p>
+<ul>
+<li>减少空间碎片化</li>
+<li>不能立即回收对象<h2 id="V8"><a href="#V8" class="headerlink" title="V8"></a>V8</h2></li>
+<li>V8是一款主流的JavaScript执行引擎</li>
+<li>采用即时编译</li>
+<li>V8内存设限</li>
+</ul>
+<h3 id="V8垃圾回收策略"><a href="#V8垃圾回收策略" class="headerlink" title="V8垃圾回收策略"></a>V8垃圾回收策略</h3><p>采用分代回收，内存分为新生代和老生代，针对不同对象采用不同的算法</p>
+<ul>
+<li>新生代对象采用GC算法</li>
+</ul>
+<p>V8常用的GC算法</p>
+<ul>
+<li>分代回收</li>
+<li>空间复制</li>
+<li>标记清除</li>
+<li>标记整理</li>
+<li>标记增量<h3 id="V8内存分配"><a href="#V8内存分配" class="headerlink" title="V8内存分配"></a>V8内存分配</h3></li>
+<li>V8内存空间一分为二</li>
+<li>小空间用于存储新生代对象（32M | 16M）,新生代指的是存活时间较短的对象</li>
+</ul>
+<h3 id="新生代对象回收实现"><a href="#新生代对象回收实现" class="headerlink" title="新生代对象回收实现"></a>新生代对象回收实现</h3><ul>
+<li>回收过程采用复制算法+标记整理</li>
+<li>新生代存储分为两个等大小空间</li>
+<li>使用空间为from,空闲空间为to</li>
+<li>活动对象存储与from空间，标记整理后活动对象拷贝至To</li>
+<li>from与to交换空间完成释放</li>
+</ul>
+<p>回收过程细节说明</p>
+<ul>
+<li>拷贝过程中会出现晋升，晋升就是将新生代对象移动至老生代</li>
+<li>一轮GC还存活的的新生代需要晋升</li>
+<li>To空间的使用率超过25%需要晋升</li>
+</ul>
+<h3 id="老生代对象回收"><a href="#老生代对象回收" class="headerlink" title="老生代对象回收"></a>老生代对象回收</h3><p>老生代对象指的就是存活时间较长的对象</p>
+<p>老生代对象限制：64位操作系统1.4G、32位操作系统700M</p>
+<p>回收</p>
+<ul>
+<li>只要采用标记清除、标记整理、标记增量算法</li>
+<li>首先采用标记清除完成垃圾回收空间的清除</li>
+<li>采用标记整理进行空间优化（晋升时触发）</li>
+<li>采用增量标记进行效率优化</li>
+</ul>
+<p>程序触发垃圾回收后，会遍历对象进行标记，之后标记和程序执行交替进行（将标记操作分成了多步，程序停顿的时间拆分成了多个小段），标记操作完成后，完成清除，程序继续执行<br><img src="./images/1611306361.jpg" alt="标记增量回收过程"></p>
+<p>新生代与老生代回收对比</p>
+<ul>
+<li>新生代区域垃圾回收使用空间交换时间</li>
+<li>老生代区域垃圾回收不适合复制算法</li>
+</ul>
+<h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p>GC的目的是为了实现内存空间的良性循环，Performance提供多种监控方式</p>
+<p>打开浏览器控制台，选择Performance，开启录制功能</p>
+<h3 id="内存问题的外在表现"><a href="#内存问题的外在表现" class="headerlink" title="内存问题的外在表现"></a>内存问题的外在表现</h3><ul>
+<li>页面出现延迟加载或经常性暂停</li>
+<li>页面出现出现持续糟糕的性能</li>
+<li>页面的性能随着时间延长越来越差</li>
+</ul>
+<h3 id="监控内存的几种方式"><a href="#监控内存的几种方式" class="headerlink" title="监控内存的几种方式"></a>监控内存的几种方式</h3><p>界定内存问题的标准</p>
+<ul>
+<li>内存泄漏：内存使用持续升高</li>
+<li>内存膨胀：在多数设备上都存在性能问题</li>
+<li>频繁的垃圾回收：通过内存变化图进行分析</li>
+</ul>
+<p>内存监控的几种方式</p>
+<ul>
+<li>浏览器的任务管理器（<code>shift + esc</code>）</li>
+<li>Timeline时序图记录</li>
+<li>堆快照查找分离DOM（浏览器控制台&gt;内存）</li>
+</ul>
+<p>频繁的垃圾回收</p>
+<ul>
+<li>timtLine中频繁的上升或下降</li>
+<li>任务管理器数据频繁的增加减少</li>
+</ul>
+<h2 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h2><p>可通过 <a target="_blank" rel="noopener" href="https://jsperf.com/">https://jsperf.com/</a> 对代码进行性能测试</p>
+<h3 id="慎用全局变量"><a href="#慎用全局变量" class="headerlink" title="慎用全局变量"></a>慎用全局变量</h3><p>为什么要慎用</p>
+<ul>
+<li>全局变量定义在全局执行上下文，是所有作用域链的顶端</li>
+<li>全局执行上下文一直存在于上下文执行栈，直到程序退出</li>
+<li>如果某个局部作用域出现了同名变量则会遮蔽或污染全局</li>
+</ul>
 
                 
             </div>
@@ -570,7 +626,7 @@ require.js要求，每个模块是一个单独的js文件。这样的话，如�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shibin-cli.github.io/blog/blog/2021/07/19/requirejs/">https://shibin-cli.github.io/blog/blog/2021/07/19/requirejs/</a>
+                    <a href="https://shibin-cli.github.io/blog/blog/2021/01/15/performance/">https://shibin-cli.github.io/blog/blog/2021/01/15/performance/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -628,13 +684,13 @@ require.js要求，每个模块是一个单独的js文件。这样的话，如�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/blog/2021/07/19/performance/">
+                <a href="/blog/2021/07/03/tools/">
                     <div class="card-image">
                         
                         
-                        <img src="/blog/medias/featureimages/17.jpg" class="responsive-img" alt="JavaScript性能优化">
+                        <img src="/blog/medias/featureimages/20.jpg" class="responsive-img" alt="前端常用工具">
                         
-                        <span class="card-title">JavaScript性能优化</span>
+                        <span class="card-title">前端常用工具</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -645,7 +701,7 @@ require.js要求，每个模块是一个单独的js文件。这样的话，如�
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-03
                         </span>
                         <span class="publish-author">
                             
@@ -658,8 +714,8 @@ require.js要求，每个模块是一个单独的js文件。这样的话，如�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/blog/tags/%E6%80%A7%E8%83%BD/">
-                        <span class="chip bg-color">性能</span>
+                    <a href="/blog/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>
@@ -673,13 +729,13 @@ require.js要求，每个模块是一个单独的js文件。这样的话，如�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/blog/2021/07/19/scaffolding/">
+                <a href="/blog/2021/01/10/jsdoc/">
                     <div class="card-image">
                         
                         
-                        <img src="/blog/medias/featureimages/13.jpg" class="responsive-img" alt="脚手架">
+                        <img src="/blog/medias/featureimages/15.jpg" class="responsive-img" alt="jsdoc">
                         
-                        <span class="card-title">脚手架</span>
+                        <span class="card-title">jsdoc</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -690,14 +746,14 @@ require.js要求，每个模块是一个单独的js文件。这样的话，如�
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/blog/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/blog/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    开发工具
                                 </a>
                             
                             

@@ -417,7 +417,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-19
+                    2021-07-09
                 </div>
                 
 
@@ -449,6 +449,7 @@
 </ul>
 <p>模块加载模式没有中心容器，可以将任意一个微应用当做项目入口，微应用与微应用之间相互串联，这种模式也叫做<strong>去中心化模式</strong></p>
 <p>webpack5引进了<a target="_blank" rel="noopener" href="https://webpack.docschina.org/concepts/module-federation/">Module Federation</a>（模块联邦，简称mf），mf 实际想要做的事，便是把多个无相互依赖、单独部署的应用合并为一个。一个模块既可以导出给其他模块使用，又可以导入一个其他模块</p>
+<p>无论是 <a target="_blank" rel="noopener" href="https://zh-hans.single-spa.js.org/docs/getting-started-overview">single-spa</a> 还是 <a target="_blank" rel="noopener" href="https://qiankun.umijs.org/zh/guide">qiankun</a>，加载不同模块，都需要有一个容器中心来承载，而在 mf 中，没有且也不需要容器中心（每个应用都可以导出又导入）</p>
 <h2 id="Module-Federation在webpack中的使用"><a href="#Module-Federation在webpack中的使用" class="headerlink" title="Module Federation在webpack中的使用"></a>Module Federation在webpack中的使用</h2><p>项目A，导出应用</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span>
@@ -558,7 +559,7 @@ index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://shibin-cli.github.io/blog/blog/2021/07/19/moduleFederation/">https://shibin-cli.github.io/blog/blog/2021/07/19/moduleFederation/</a>
+                    <a href="https://shibin-cli.github.io/blog/blog/2021/07/09/moduleFederation/">https://shibin-cli.github.io/blog/blog/2021/07/09/moduleFederation/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -616,13 +617,13 @@ index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/blog/2021/07/19/module/">
+                <a href="/blog/2021/07/10/requirejs/">
                     <div class="card-image">
                         
                         
-                        <img src="/blog/medias/featureimages/8.jpg" class="responsive-img" alt="JS模块化开发">
+                        <img src="/blog/medias/featureimages/15.jpg" class="responsive-img" alt="requirejs使用">
                         
-                        <span class="card-title">JS模块化开发</span>
+                        <span class="card-title">requirejs使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -633,7 +634,7 @@ index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-10
                         </span>
                         <span class="publish-author">
                             
@@ -669,13 +670,13 @@ index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/blog/2021/07/19/performance/">
+                <a href="/blog/2021/07/03/tools/">
                     <div class="card-image">
                         
                         
-                        <img src="/blog/medias/featureimages/17.jpg" class="responsive-img" alt="JavaScript性能优化">
+                        <img src="/blog/medias/featureimages/20.jpg" class="responsive-img" alt="前端常用工具">
                         
-                        <span class="card-title">JavaScript性能优化</span>
+                        <span class="card-title">前端常用工具</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -686,7 +687,7 @@ index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-03
                             </span>
                         <span class="publish-author">
                             
@@ -699,8 +700,8 @@ index.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/blog/tags/%E6%80%A7%E8%83%BD/">
-                        <span class="chip bg-color">性能</span>
+                    <a href="/blog/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>
