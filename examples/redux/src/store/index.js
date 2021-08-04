@@ -2,25 +2,20 @@ import {
     createStore
 } from 'redux'
 
-const initState = {
-    count: 0
-}
+import reducer from './reducers'
+import {
+    applyMiddleware
+} from 'redux'
+import logger from './middlewares/loggger'
+// import thunk from './middlewares/thunk'
+// import thunk from 'redux-thunk'
 
-function reducer(state = initState, action) {
-    switch(action.type){
-        case 'decrement':
-            return {
-                count: state.count - 1
-            };
-        case 'increment':
-            return {
-                count: state.count + 1
-            };
-         default:
-            return state
-    }
-}
+import createSagaMiddleWare from 'redux-saga'
+// import CounterSaga from './sagas/couter'
+import allSaga from './sagas'
 
-const store = createStore(reducer)
+const sageMiddleWare = createSagaMiddleWare()
+const store = createStore(reducer, applyMiddleware(logger, sageMiddleWare))
+sageMiddleWare.run(allSaga)
 
 export default store
