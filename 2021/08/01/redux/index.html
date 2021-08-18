@@ -747,6 +747,34 @@ sageMiddleWare<span class="token punctuation">.</span><span class="token functio
         <span class="token function">modalSaga</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Redux-Toolkit"><a href="#Redux-Toolkit" class="headerlink" title="Redux Toolkit"></a><a target="_blank" rel="noopener" href="https://redux-toolkit.js.org/">Redux Toolkit</a></h2><pre class="line-numbers language-none"><code class="language-none">npm install @reduxjs&#x2F;toolkit react-redux<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>
+    createSlice<span class="token punctuation">,</span>
+    configureStore
+<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@reduxjs/toolkit'</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">TODOS_KEY</span> <span class="token operator">=</span> <span class="token string">'todos'</span>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span>
+    reducer<span class="token operator">:</span> todoReducer<span class="token punctuation">,</span>
+    actions
+<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">createSlice</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    name<span class="token operator">:</span> <span class="token constant">TODOS_KEY</span><span class="token punctuation">,</span>
+    initialState<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    reducers<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">addTodo</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> actions</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            state<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>actions<span class="token punctuation">.</span>payload<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token punctuation">&#123;</span>
+    addTodo
+<span class="token punctuation">&#125;</span> <span class="token operator">=</span> actions
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">configureStore</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    reducer<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">[</span><span class="token constant">TODOS_KEY</span><span class="token punctuation">]</span><span class="token operator">:</span> todoReducer
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    devTools<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -826,12 +854,11 @@ sageMiddleWare<span class="token punctuation">.</span><span class="token functio
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/blog/2021/08/01/redux/">
+                <a href="/blog/2021/08/15/reactHooks/">
                     <div class="card-image">
                         
                         
@@ -847,9 +874,9 @@ sageMiddleWare<span class="token punctuation">.</span><span class="token functio
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -862,7 +889,6 @@ sageMiddleWare<span class="token punctuation">.</span><span class="token functio
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
