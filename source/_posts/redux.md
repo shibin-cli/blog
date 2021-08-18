@@ -379,3 +379,38 @@ export default function* allSaga() {
     ])
 }
 ```
+## [Redux Toolkit](https://redux-toolkit.js.org/)
+``` 
+npm install @reduxjs/toolkit react-redux
+```
+``` js
+import {
+    createSlice,
+    configureStore
+} from '@reduxjs/toolkit'
+export const TODOS_KEY = 'todos'
+const {
+    reducer: todoReducer,
+    actions
+} = createSlice({
+    name: TODOS_KEY,
+    initialState: [],
+    reducers: {
+        addTodo(state, actions) {
+            state.push(actions.payload)
+        }
+    }
+})
+```
+``` js
+export const {
+    addTodo
+} = actions
+
+export default configureStore({
+    reducer: {
+        [TODOS_KEY]: todoReducer
+    },
+    devTools: process.env.NODE_ENV !== 'production'
+})
+```
