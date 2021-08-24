@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类, Web前端学习笔记">
+    <meta name="keywords" content="分类: React, Web前端学习笔记">
     <meta name="description" content="学习笔记">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分类 | Web前端学习笔记</title>
+    <title>分类: React | Web前端学习笔记</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/blog/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/blog/libs/awesome/css/all.css">
@@ -348,7 +348,7 @@
                 
                 <a href="/blog/categories/%E5%89%8D%E7%AB%AF/React/" title="React: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
+                             chip-active "
                             style="background-color: #E8F8F5;">React
                         <span class="tag-length">1</span>
                     </span>
@@ -362,65 +362,70 @@
 
 
     
-    <style type="text/css">
-    #category-radar {
-        width: 100%;
-        height: 360px;
-    }
-</style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="category-radar" class="card-content"></div>
-    </div>
-</div>
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/blog/2021/08/22/cssInJS/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/blog/medias/featureimages/1.jpg" class="responsive-img" alt="CSS IN JS">
+                            
+                            <span class="card-title">CSS IN JS</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                CSS-IN-JS为什么会有CSS-IN-JS解决CSS的局限性，例如缺乏动态功能、作用域和可移植性
+CSS-IN-JS的优点
 
-<script type="text/javascript" src="/blog/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let radarChart = echarts.init(document.getElementById('category-radar'));
+让CSS拥有独立的作用域，防止CSS样式泄漏到组件外部，引起样式冲突
+让组件具有可移植性、重用性
+样式具有动态
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/blog/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                                
+                                <a href="/blog/categories/%E5%89%8D%E7%AB%AF/React/" class="post-category">
+                                    React
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
 
-    
-
-    let option = {
-        title: {
-            left: 'center',
-            text: '文章分类雷达图',
-            textStyle: {
-                fontWeight: 500,
-                fontSize: 22
-            }
-        },
-        tooltip: {},
-        radar: {
-            name: {
-                textStyle: {
-                    color: '#3C4858'
-                }
-            },
-            indicator: [{"name":"前端","max":10},{"name":"开发工具","max":10},{"name":"脚手架","max":10},{"name":"React","max":10}],
-            nameGap: 5,
-            center: ['50%','55%'],
-            radius: '66%'
-        },
-        series: [{
-            type: 'radar',
-            color: ['#3ecf8e'],
-            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data : [
-                {
-                    value : [9,1,1,1],
-                    name : '文章分类数量'
-                }
-            ]
-        }]
-    };
-
-    radarChart.setOption(option);
-</script>
-
-    
-
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/blog/tags/React/">
+                            <span class="chip bg-color">React</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
+
+
 
 
     <footer class="page-footer bg-color">
