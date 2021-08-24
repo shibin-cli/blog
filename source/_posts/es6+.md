@@ -155,13 +155,13 @@ console.log(`1 + 2 = ${1 + 2}`) // 1 + 2 = 3
 const name = 'Shibin'
 const age = '17'
 function myFunc(str, name, age) {
-    console.log(str) // [ 'My name is ', ". I'm ", ' years old' ]
+    console.log(str) // [ 'My name is ', ". I'm ", '' ]
     console.log(name, age) // Shibin 17
     let old = age > 1 ? `${age} years old` : `${age} year old`
     return str[0] + name + str[1] + old
 }
 let res = myFunc`My name is ${name}. I'm ${age}`
-console.log(res) // My name is Shibin. I'm 1 year old
+console.log(res) // My name is Shibin. I'm 17 years old
 ```
 #### 字符串方法
 * includes  是否包含xxx字符串
