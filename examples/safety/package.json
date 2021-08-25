@@ -1,0 +1,22 @@
+{
+  "name": "safety",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "csrf": "node csrf/csrf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.1.1",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-csrf": "^3.0.8",
+    "koa-session": "^6.2.0",
+    "koa-static": "^5.0.0"
+  }
+}

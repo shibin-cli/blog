@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p v-html="text"></p>
+        <p v-html="script"></p>
+        <script>alert(100)</script>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.6/dist/vue.global.min.js"></script>
+<!-- <script>alert(1)</script> -->
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                text: '<h1>哈哈哈哈哈啊哈哈</h1>',
+                script:`<img src="xxx" onerror="alert('我拿到你的信息了，正在给我转一个亿')">`
+            }
+        }
+    }).mount('#app')
+</script>
+
+</html>
